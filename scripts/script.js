@@ -59,7 +59,7 @@ document.querySelector('.clear-btn').addEventListener('click', function (){
 });
 
 //Modify styles
-display.style.background color = 'f9f9f9';
+display.style.backgroundColor = 'f9f9f9';
 
 
 //Prevent submit
@@ -73,4 +73,3 @@ window.scrollTo(0,0);
 console.log(`Window size: ${
     window.innerWidth}x${window.innerHeight}`);
 
-    
