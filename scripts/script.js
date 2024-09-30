@@ -3,7 +3,7 @@ const display= document.getElementById('display');
 
 //Cache at least one element using querySelector or querySelectorAll
 const numButtons= document.querySelectorAll('.num-btn');
-const opButtons= document.querySelectorAll('op-btn');
+const opButtons= document.querySelectorAll('.op-btn');
 
 //Variables
 let currentValue= '';
@@ -33,6 +33,7 @@ opButtons.forEach(button => {button.addEventListener
             operator = button.getAttribute('data-value');
             previousValue = currentValue;
             currentValue = '';
+            updateDisplay('');
         }
     );
 });
@@ -45,7 +46,7 @@ document.getElementById('equal-btn').addEventListener('click', function () {
         const result=eval(`${previousValue}
             ${operator} ${currentValue}`);
             updateDisplay(result);
-            currentValue= result;
+            currentValue= result.toString();
             previousValue= '';
             operator='';
 
