@@ -51,3 +51,10 @@ document.getElementById('equal-btn').addEventListener('click', function () {
 
 });
 
+document.querySelector('.clear-btn').addEventListener('click', function (){
+    currentValue = '';
+    previousValue = '';
+    operator = '';
+    updateDisplay('0');
+});
+
