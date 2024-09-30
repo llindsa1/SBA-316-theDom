@@ -4,6 +4,9 @@ const display= document.getElementById('display');
 //Cache at least one element using querySelector or querySelectorAll
 const numButtons= document.querySelectorAll('.num-btn');
 const opButtons= document.querySelectorAll('.op-btn');
+const equalButton= document.getElementById('equal-btn');
+const clearButton= document.querySelector('clear-btn');
+
 
 //Variables
 let currentValue= '';
@@ -38,26 +41,42 @@ opButtons.forEach(button => {button.addEventListener
     );
 });
 
-document.getElementById('equal-btn').addEventListener('click', function () {
-    if (currentValue === ''  ||
-        previousValue === '')
+equalButton.addEventListener('click', function () {
+    if (currentValue === '' || previousValue === ''  || operator === '')
         return;
 
-        const result=eval(`${previousValue}
-            ${operator} ${currentValue}`);
-            updateDisplay(result);
-            currentValue= result.toString();
-            previousValue= '';
-            operator='';
+    let result;
+    const prev=
+    parseFloat(previousValue);
+    const current=
+    parseFloat (currentValue);
 
+    switch (operator) {
+        case '+':
+            result = prev+current;
+            break;
+        case '-':
+            result= prev- current;
+            break;
+        case '*':
+            result=prev*current;
+            break;
+        case '/':
+            result= prev/current;
+            break;
+        default:
+            return;
+
+    }
+
+    updateDisplay(result);
+    currentValue= result.toString();
+
+    previousValue= '';
+    operator= '';
 });
 
-document.querySelector('.clear-btn').addEventListener('click', function (){
-    currentValue = '';
-    previousValue = '';
-    operator = '';
-    updateDisplay('0');
-});
+
 
 //Modify styles
 display.style.backgroundColor = 'f9f9f9';
