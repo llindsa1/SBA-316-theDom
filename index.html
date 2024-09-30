@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Linda Lindsay Calculator App </title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1> Simple Calculator</h1>
+        <form id="calc-form">
+            <input type="text"
+            id="display" placeholder="0" readonly>
+            <div
+                id="button-container">
+                <button type="button"
+                class="num-btn" data-value="7">7</button>
+                <button type="button"
+                class="num-btn" data-value="8">8</button>
+                <button type="button"
+                class="num-btn" data-value="9">9</button>
+                <button type="button"
+                class="op-btn" data-value="+">+</button>
+
+
+            </div>
+        </form>
+
+    </div>
+  
+ <script> src="script.js" </script>   
 </body>
 </html>
