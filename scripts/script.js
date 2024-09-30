@@ -58,3 +58,19 @@ document.querySelector('.clear-btn').addEventListener('click', function (){
     updateDisplay('0');
 });
 
+//Modify styles
+display.style.background color = 'f9f9f9';
+
+
+//Prevent submit
+document.getElementById('calc-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+});
+
+//BOM
+window.scrollTo(0,0);
+
+console.log(`Window size: ${
+    window.innerWidth}x${window.innerHeight}`);
+
+    
