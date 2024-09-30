@@ -36,3 +36,18 @@ opButtons.forEach(button => {button.addEventListener
         }
     );
 });
+
+document.getElementById('equal-btn').addEventListener('click', function () {
+    if (currentValue === ''  ||
+        previousValue === '')
+        return;
+
+        const result=eval(`${previousValue}
+            ${operator} ${currentValue}`);
+            updateDisplay(result);
+            currentValue= result;
+            previousValue= '';
+            operator='';
+
+});
+
